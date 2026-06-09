@@ -4,7 +4,7 @@
 A Python-based network automation tool that performs automated health checks across multiple Cisco IOS devices using Netmiko.
 
 ## What it does
-
+- NAPALM-based structured interface monitoring with automatic down interface warnings
 - Connects to multiple network devices simultaneously via SSH
 - Pulls interface status (up/down) from each device
 - Pulls CPU usage from each device
@@ -12,7 +12,7 @@ A Python-based network automation tool that performs automated health checks acr
 - Timestamps every health check run
 
 ## Tech Stack
-
+- NAPALM 4.x
 - Python 3
 - Netmiko 4.7.0
 - PyYAML
