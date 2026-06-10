@@ -1,0 +1,29 @@
+name: Network Health CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install netmiko napalm pyyaml
+
+      - name: Check Python syntax - health_check
+        run: python -m py_compile health_check.py
+
+      - name: Check Python syntax - napalm_check
+        run: python -m py_compile napalm_check.py
